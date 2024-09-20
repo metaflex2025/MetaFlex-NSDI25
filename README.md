@@ -8,7 +8,7 @@
 - GHDL 3.0.0 (https://github.com/ghdl/ghdl/releases)
 
 ### Instructions:
-- cd Metaflex-NSDI25/tb
+- cd MetaFlex-NSDI25/tb
 - make TESTCASE=fixed290 # To run the fixed size 290-byte packet test
 
 ### To run Vivado:
@@ -19,26 +19,26 @@
 
 ### Instructions:
 - Download Enyx nxFramework example designs
-- Copy Metaflex-NSDI2025/hw/config/u250-smartnic/firmware_config.yaml to
+- Copy MetaFlex-NSDI2025/hw/config/u250-smartnic/firmware_config.yaml to
   <enyx_example>/hw/config/u250-smartnic/
-- Copy Metaflex-NSDI2025/hw/cores/hdl/smartnic/src/*.vhd to
+- Copy MetaFlex-NSDI2025/hw/cores/hdl/smartnic/src/*.vhd to
   <enyx_example>/hw/cores/hdl/smartnic/src/
 To run Vivado:
 - cd <enyx_example>/hw/build
 - make firmware_u250-smartnic
 
 ### Vivado outputs:
-- FPGA bitstream: Metaflex-NSDI2025/hw/build/output/u250-smartnic/compil_0/synth_00/build/output
-- Vivado logs:    Metaflex-NSDI2025/hw/build/output/u250-smartnic/compil_0/synth_00/build/logs
-- Vivado reports: Metaflex-NSDI2025/hw/build/output/u250-smartnic/compil_0/synth_00/build/reports
+- FPGA bitstream: MetaFlex-NSDI2025/hw/build/output/u250-smartnic/compil_0/synth_00/build/output
+- Vivado logs:    MetaFlex-NSDI2025/hw/build/output/u250-smartnic/compil_0/synth_00/build/logs
+- Vivado reports: MetaFlex-NSDI2025/hw/build/output/u250-smartnic/compil_0/synth_00/build/reports
 
 ### To run the hw test:
 - Target: AMD/Xilinx Alveo U250 FPGA card
 - Program the .bit file using the Vivado hardware manager or follow Enyx's instructions for
   first time setup of the U250 SmartNIC card and then program the flash memory using the .rbf
   using Enyx's enyx-bsp instructions
-- Copy Metaflex-NSDI2025/sw/enyx-hw-mmio-test/main.cpp to <enyx_example>/sw/enyx-hw-mmio-test/
-- Copy Metaflex-NSDI2025/sw/enyx-hw-mmio-test/data/* to <enyx_example>/sw/enyx-hw-mmio-test/data
+- Copy MetaFlex-NSDI2025/sw/enyx-hw-mmio-test/main.cpp to <enyx_example>/sw/enyx-hw-mmio-test/
+- Copy MetaFlex-NSDI2025/sw/enyx-hw-mmio-test/data/* to <enyx_example>/sw/enyx-hw-mmio-test/data
 - cd <enyx_example>/sw/enyx-hw-mmio-test
 - mkdir build
 - cd build
@@ -51,7 +51,7 @@ The test to run is configured on line 25 of main.cpp as follows:
 const std::string TEST_NAME = "fixed290";
 
 The test reads the following files:
-- <test_name>.conf for Metaflex's configuration
+- <test_name>.conf for MetaFlex's configuration
 - <test_name>.enq, containing the input descriptors
 
 The format of the <test_name>.enq file is as follows:
