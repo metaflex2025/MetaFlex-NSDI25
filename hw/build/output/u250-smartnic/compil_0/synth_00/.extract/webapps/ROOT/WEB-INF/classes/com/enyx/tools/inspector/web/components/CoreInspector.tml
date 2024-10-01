@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter" id="${clientId}">
+    <t:zone id="${getZoneClientId(CORE_ZONE_NAME)}" t:id="coreZone">
+        <div style="float: left; width: 49.7%;">
+            <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Node Data'">
+                <table style="float: left;">
+                    <tr>
+                        <td>UID:</td>
+                        <td class="padding-left">${core.Id}</td>
+                    </tr>
+                    <tr>
+                        <td>Hardware Type:</td>
+                        <td class="padding-left">${core.enyxDesc.hwType}</td>
+                    </tr>
+                    <tr>
+                        <td>Name:</td>
+                        <td class="padding-left">${core.name}</td>
+                    </tr>
+                    <tr>
+                        <td>Number of children:</td>
+                        <td class="padding-left">${core.children.size()}</td>
+                    </tr>
+                    <tr>
+                        <td>Node version:</td>
+                        <td class="padding-left">${core.nodeVersion}</td>
+                    </tr>
+                    <tr>
+                        <td>Description version:</td>
+                        <td class="padding-left">${core.descriptionVersion}</td>
+                    </tr>
+                    <tr>
+                        <td>URI:</td>
+                        <td class="padding-left">${core.toURI()}</td>
+                    </tr>
+                    <tr>
+                        <td>Base address:</td>
+                        <td class="padding-left">0x${toHexString(core.baseAddress)}</td>
+                    </tr>
+                </table>
+                <div style="float: right;">
+                    <t:zone t:id="refreshNodeZone" id="${getZoneClientId(REFRESH_NODE_ZONE_NAME)}" class="text-right">
+                        <t:form t:zone="^" t:clientValidation="NONE" class="text-right" t:id="refreshNodeForm">
+                            <t:hidden value="core" />
+
+                            <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                                <span class="dijitReset dijitInline dijitButtonNode">
+                                    <input class="dijitReset dijitInline dijitButtonText" t:type="submit" t:event="resetNode" value="Reset node" />
+                                </span>
+                            </span>
+                            <br />
+                            <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                                <span class="dijitReset dijitInline dijitButtonNode">
+                                    <input class="dijitReset dijitInline dijitButtonText" t:type="submit" t:event="resetFullNode" value="Reset full node hierarchy" />
+                                </span>
+                            </span>
+                            <br />
+                            <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                                <span class="dijitReset dijitInline dijitButtonNode">
+                                    <input class="dijitReset dijitInline dijitButtonText" t:type="submit" t:event="refreshNode" value="Refresh node" />
+                                </span>
+                            </span>
+                        </t:form>
+                    </t:zone>
+                    <hr />
+                    <t:zone id="${getZoneClientId(RAW_VALUE_ZONE_NAME)}" t:id="rawValueZone">
+                        <t:form t:zone="^" t:clientValidation="NONE" t:id="rawValueForm"
+                            t:tracker="rawValueValidationTracker">
+                            <t:hidden value="core" />
+                            <t:errors />
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><t:label for="rawValueRegister">Register</t:label>.<t:label
+                                                for="rawValueOffset">Offset</t:label>:</td>
+                                        <td class="padding-left"><input t:type="textfield" t:id="rawValueRegister"
+                                            t:value="rawValueRegister" t:validate="required,min=0"
+                                            data-dojo-type="dijit.form.TextBox" style="width: 3em" />.<input
+                                            t:type="textfield" t:id="rawValueOffset" t:value="rawValueOffset"
+                                            t:validate="required,min=0,max=32" data-dojo-type="dijit.form.TextBox"
+                                            style="width: 3em" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><t:label for="rawValueSize">Size</t:label>:</td>
+                                        <td class="padding-left"><input t:type="textfield" t:value="rawValueSize"
+                                            t:id="rawValueSize" t:validate="required,min=1,max=64"
+                                            data-dojo-type="dijit.form.TextBox" style="width: 3em" /> bits</td>
+                                    </tr>
+                                    <tr>
+                                        <td><t:label for="rawValue">Value</t:label>:</td>
+                                        <td class="padding-left">0x<input t:type="textfield" t:value="rawValue"
+                                            t:id="rawValue" t:validate="maxlength=16,regexp=^[A-Fa-f0-9]+$"
+                                            data-dojo-type="dijit.form.TextBox" style="width: 12em" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-right">
+                                <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                                    <span class="dijitReset dijitInline dijitButtonNode">
+                                        <input class="dijitReset dijitInline dijitButtonText" t:type="submit" t:id="readRawValue" value="Read raw value" />
+                                    </span>
+                                </span>
+                                <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                                    <span class="dijitReset dijitInline dijitButtonNode">
+                                        <input class="dijitReset dijitInline dijitButtonText" t:type="submit" t:id="writeRawValue" value="Write raw value" />
+                                    </span>
+                                </span>
+                            </div>
+                        </t:form>
+                    </t:zone>
+                </div>
+                <div style="clear: both" />
+            </div>
+            <div t:type="if" t:test="core.hasMonitorables()" data-dojo-type="dijit.TitlePane"
+                data-dojo-props="title:'Monitorable data'">
+                <div t:type="monitorableInspector" t:core="core" t:id="monitorableInspector" />
+            </div>
+            <div id="${clientId}_followChartContainerDiv"></div>
+            <t:if test="core.hasPages()">
+                <div t:type="loop" t:source="core.pages" t:value="page" data-dojo-type="dijit.TitlePane"
+                    data-dojo-props="title:'${page.name}'">
+                    <div t:type="pageInspector" t:page="page" t:id="pageInspector" />
+                </div>
+            </t:if>
+        </div>
+        <div style="float: right; width: 49.7%;">
+            <div t:type="if" t:test="core.hasConfigurables()" data-dojo-type="dijit.TitlePane"
+                data-dojo-props="title:'Configurable data'">
+                <div t:type="configurableInspector" t:core="core" t:id="configurableInspector" />
+            </div>
+            <div t:type="if" t:test="core.hasCommands()" data-dojo-type="dijit.TitlePane"
+                data-dojo-props="title:'Commands'">
+                <div t:type="commandInspector" t:core="core" t:id="commandInspector" />
+            </div>
+            <div t:type="if" t:test="displayCommandHistory" data-dojo-type="dijit.TitlePane"
+                data-dojo-props="title:'Command history'">
+                <t:zone id="${getZoneClientId(COMMANDS_HISTORY_ZONE_NAME)}" t:id="commandsHistoryZone">
+                    <t:form zone="^" clientValidation="NONE" t:id="commandHistoriesForm1">
+                        <t:hidden value="core" />
+
+                        <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                            <span class="dijitReset dijitInline dijitButtonNode">
+                                <input class="dijitReset dijitInline dijitButtonText" t:type="submit" t:event="reExecuteCommandsHistory" value="Re-execute" />
+                            </span>
+                        </span>
+
+                        -
+                        <t:if test="commandsHistoryBeingReExecute">
+                            <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                                <span class="dijitReset dijitInline dijitButtonNode">
+                                    <input class="dijitReset dijitInline dijitButtonText" t:type="submit" t:event="stopReExecuteEveryCommandsHistory" value="Stop interval re-execute" />
+                                </span>
+                            </span>
+
+                        <p:else>
+                                Re-execute every
+
+                                <input t:type="textfield" t:value="secondsFullHistory"
+                                    data-dojo-type="dijit.form.TextBox" style="width: 1em;" />
+                                seconds
+
+
+                                <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                                    <span class="dijitReset dijitInline dijitButtonNode">
+                                        <input class="dijitReset dijitInline dijitButtonText" t:type="submit" t:event="reExecuteEveryCommandsHistory" value="Start" />
+                                    </span>
+                                </span>
+                        </p:else></t:if>
+                        -
+
+                        <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                            <span class="dijitReset dijitInline dijitButtonNode">
+                                <input class="dijitReset dijitInline dijitButtonText" t:type="submit" t:event="clearCommandsHistory" value="Clear" />
+                            </span>
+                        </span>
+                        -
+
+                        <button data-dojo-type="dijit.form.Button"
+                                data-dojo-props="label:'Save history', onClick:function(){window.location='${saveCommandsHistoryURI}'}" />
+
+                    </t:form>
+                    <div data-dojo-type="dojox.form.Uploader"
+                        data-dojo-props="label: 'Load history from XML file', multiple: false, uploadOnSelect: true,
+                    url: '${loadCommandsHistoryURI}', onComplete:handleUploadXmlFileComplete" />
+                    <hr class="command" />
+                    <t:form zone="^" clientValidation="NONE" t:id="commandHistoriesForm2">
+                        <t:hidden value="core" />
+                        <t:loop t:id="commandHistoriesLoop" t:source="commandHistories" t:value="commandHistory"
+                            t:index="commandHistoryIndex">
+                            <div class="command">
+                                <div class="left max-size">
+                                    <div class="right">
+
+                                        <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                                            <span class="dijitReset dijitInline dijitButtonNode">
+                                                <input class="dijitReset dijitInline dijitButtonText" t:type="submit"
+                                                    t:context="commandHistory" t:defer="false" t:event="reExecute" value="Re-execute" />
+                                            </span>
+                                        </span>
+
+                                        <br />
+
+                                        <t:if test="commandBeingReExecute">
+                                            <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                                                <span class="dijitReset dijitInline dijitButtonNode">
+                                                    <input class="dijitReset dijitInline dijitButtonText" t:type="submit"
+                                                        t:context="commandHistory" t:defer="false" t:event="stopReExecuteEvery" value="Stop interval re-execute" />
+                                                </span>
+                                            </span>
+                                        <p:else>
+                                            Re-execute every
+                                            <input t:type="textfield" t:value="seconds"
+                                                    data-dojo-type="dijit.form.TextBox" style="width: 1em;" />
+                                            seconds
+
+                                            <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                                                <span class="dijitReset dijitInline dijitButtonNode">
+                                                    <input class="dijitReset dijitInline dijitButtonText" t:type="submit"
+                                                        t:context="commandHistory" t:defer="false" t:event="reExecuteEvery" value="Start" />
+                                                </span>
+                                            </span>
+                                        </p:else></t:if>
+                                    </div>
+                                    <span class="name">${commandHistory.name}</span>
+                                    <t:if test="commandHistory.pageUri"> of page ${commandHistoryPageName} with page number ${commandHistory.pageNumber}</t:if>
+                                    <br />
+                                    <ul class="commandArgs">
+                                        <li t:type="loop" t:id="commandHistoryArgsLoop"
+                                            t:source="commandHistory.arguments" t:value="commandHistoryArgument"
+                                            id="${commandHistoryIndex}_${commandHistoryArgument.argumentURI}"
+                                            class="left">${commandHistoryArgument.value} <span
+                                            data-dojo-type="dijit.Tooltip"
+                                            data-dojo-props="connectId:'${commandHistoryIndex}_${commandHistoryArgument.argumentURI}',position:['above','below'],showDelay:0">${commandHistoryArgument.name}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clear" />
+                            </div>
+                            <hr class="command" />
+                        </t:loop>
+                    </t:form>
+                </t:zone>
+            </div>
+            <div data-dojo-type="dijit.TitlePane"
+                data-dojo-props="title:'Virtual registers'">
+                <div t:type="virtualRegisterInspector" t:core="core" t:id="virtualRegisterInspector" />
+            </div>
+        </div>
+    </t:zone>
+</div>

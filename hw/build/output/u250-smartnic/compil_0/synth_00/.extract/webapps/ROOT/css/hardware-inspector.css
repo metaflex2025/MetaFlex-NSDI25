@@ -1,0 +1,253 @@
+html,body,#hardwareInspectorContainer {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+fieldset legend {
+    margin-bottom: auto;
+    font-size: 12px;
+    border: none;
+}
+
+fieldset.alerts {
+	top: 5px;
+	right: 40px;
+	width: 30%;
+	position: absolute;
+	z-index: 20;
+	border: 1px solid black;
+	padding: 3px 3px 0 3px;
+	background-color: #fff;
+}
+
+fieldset.alerts .alert {
+	padding: 2px;
+}
+
+#borderContainer {
+	width: 100%;
+	height: 100%;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+.max-size {
+	width: 100%;
+}
+
+.dijitButtonText {
+    background-color: transparent;
+}
+
+.dijitTabContainerTop-tabs .dijitTabChecked {
+    padding-top:5px;
+}
+
+.boardIcon {
+	background-image: url('../images/cardIcon.png');
+	width: 16 px;
+	height: 16px;
+}
+
+.coreIcon {
+	background-image: url('../images/coreIcon.png');
+	width: 16 px;
+	height: 16px;
+}
+
+div.t-exception-container {
+	z-index: 20;
+}
+
+div.t-console {
+	z-index: 21;
+}
+
+.alignRight {
+	text-align: right;
+}
+
+div.t-info ul {
+	margin: 0;
+}
+
+.form-control {
+    height: auto;
+}
+
+.commandArg {
+	padding-left: 15px;
+}
+
+.registers {
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.registers td,.registers th {
+	border: 1px solid #B5BCC7;
+}
+
+.registers th {
+	background-color: #f0f0f0;
+	font-weight: bold;
+	padding: 2px 5px 2px 5px;
+}
+
+.registers tr:hover {
+	background-color: #e4f1fc;
+}
+
+.registers .number {
+	width: 6%;
+	text-align: center;
+}
+.registers .name {
+	width: 50%;
+	overflow: auto;
+}
+.registers .value {
+	white-space: pre;
+	overflow: auto;
+}
+
+.monitorables .value {
+	width: 36%;
+}
+.monitorables .action {
+	width: 8%;
+}
+
+.configurables .value, .commandArgs .value {
+	width: 44%
+}
+
+.configurables .value .dijitTextBox, .commandArgs .value .dijitTextBox, .dijitButtonContents {
+	width: 100%;
+}
+
+.monitorables .name,.monitorables .value,.configurables .name {
+	padding: 0 5px 0 5px;
+}
+
+.monitorables .action .dijitButtonNode {
+	padding: 0 2px 0 2px;
+}
+
+.monitorables .action .dijitButtonText {
+	margin-top: -4px;
+}
+
+.command {
+	margin-bottom: 1em;
+}
+
+.command span.name {
+	font-weight: bold;
+}
+
+.command em.description {
+	margin-left: 3em;
+}
+
+hr {
+	margin: 1em;
+	border: 1px solid #B5BCC7;
+}
+
+.commandArgs td {
+	border: 0px;
+}
+
+ul.commandArgs {
+	margin: 0;
+	padding: 0;
+	list-style: inside none;
+}
+
+ul.commandArgs li {
+	margin-left: 1em;
+}
+
+.jobs .name {
+	width: 100%;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.padding-left {
+	padding-left: 1em;
+}
+
+div.log {
+	clear: both;
+	height: 40em;
+	overflow: auto;
+	width: 100%;
+}
+
+div.log table {
+	border: 0;
+	width: inherit;
+}
+
+.log td {
+	vertical-align: top;
+	white-space: nowrap;
+	padding-right: 1em;
+}
+
+.log .message {
+	width: 100%;
+	padding: 0;
+	white-space: normal;
+}
+
+.log .odd {
+	background-color: #e4f1fc;
+}
+
+.log .level {
+	font-weight: bold;
+}
+
+.log .TRACE {
+	color: #00ffcc;
+}
+
+.log .DEBUG {
+	color: #00ffa2;
+}
+
+.log .INFO {
+	color: green;
+}
+
+.log .WARN {
+	color: yellow;
+}
+
+.log .ERROR {
+	color: red;
+}
+
+.log .exception {
+	background-color: #c1c1c1;
+}
+
+

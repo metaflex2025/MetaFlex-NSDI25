@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<div t:type="layout" t:title="Hardware Inspector" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+    <div id="hardwareInspectorContainer">
+        <div data-dojo-type="dijit.layout.BorderContainer"
+            data-dojo-props="design:'sidebar', gutters:true, liveSplitters:true" id="borderContainer">
+            <div data-dojo-type="dijit.layout.ContentPane"
+                data-dojo-props="splitter:true, region:'leading', maxSize:300" style="width: 15%;">
+                <t:if test="mmRunning">
+                    <div data-dojo-type="dojo.data.ItemFileReadStore" data-dojo-id="hardwareTreeStore"
+                        data-dojo-props="url:'${retrieveHardwarelink}'" />
+                    <div data-dojo-type="dijit.tree.ForestStoreModel" data-dojo-id="hardwareTreeModel"
+                        data-dojo-props="store: hardwareTreeStore, query: { type: 'board' }, rootId: 'root',
+                        rootLabel: 'Hardware', childrenAttrs: [ 'children' ]" />
+                    <div data-dojo-type="dijit.Tree" id="hardwareTree"
+                        data-dojo-props="model: hardwareTreeModel, openOnDblClick: true,
+                        showRoot: false, autoExpand: false,
+                        getIconClass : treeGetIconClass,
+                        onClick : function(item, node, evt){treeOnclick('${updateHardwareInspectorLink}', item);}" />
+                </t:if>
+            </div>
+            <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'center'">
+                <div id="tabContainer" data-dojo-type="dijit.layout.TabContainer" style="width: 100%;">
+                    <div data-dojo-type="dijit.layout.ContentPane" title="Home" closable="false" selected="true">
+                        <t:zone id="homeTab" t:id="homeTabZone">
+                            <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'System controls'">
+                                <a t:type="eventLink" t:zone="^"
+                                    t:event="rebootServer" data-dojo-type="dijit.form.Button"
+                                    data-dojo-props="label:'Reboot server'" />
+                            </div>
+                            <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Inspector controls'">
+                                <div class="left">
+                                    Hardware inspector is
+                                    <t:if test="mmRunning">
+                                        <span style="color: green;">running</span>
+                                        <p:else>
+                                            <span style="color: red;">down</span>
+                                        </p:else>
+                                    </t:if>
+                                    <t:form>
+                                        <t:if test="mmRunning">
+                                            <input t:type="submit" t:event="stopMM" data-dojo-type="dijit.form.Button"
+                                                data-dojo-props="label:'Stop hardware inspector'" /> - 
+                               	    <input t:type="submit" t:event="reloadMM" data-dojo-type="dijit.form.Button"
+                                                data-dojo-props="label:'Reload hardware inspector'" />
+                                            <p:else>
+                                                <input t:type="submit" t:event="startMM"
+                                                    data-dojo-type="dijit.form.Button"
+                                                    data-dojo-props="label:'Start hardware inspector'" />
+                                            </p:else>
+                                        </t:if>
+                                    </t:form>
+                                </div>
+                                <div class="right" style="width: 50%;">
+                                    <t:form t:zone="^" t:clientValidation="NONE" t:id="runningJobsForm">
+                                        <table class="registers jobs">
+                                            <caption>Current running jobs</caption>
+                                            <thead>
+                                                <tr>
+                                                    <th class="name">Name</th>
+                                                    <th class="action">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t:loop source="runningCommandJobs" value="commandJob">
+                                                    <tr>
+                                                        <td class="name">${commandJob.name}</td>
+                                                        <td class="action"><input t:type="submit"
+                                                            t:context="commandJob" t:defer="false"
+                                                            t:event="stopRunningJob" data-dojo-type="dijit.form.Button"
+                                                            data-dojo-props="label:'Stop'" /></td>
+                                                    </tr>
+                                                </t:loop>
+                                            </tbody>
+                                        </table>
+                                    </t:form>
+                                </div>
+                                <div class="clear" />
+                            </div>
+                            <div data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Log'">
+                                <t:form t:zone="^" t:clientValidation="NONE" t:id="logForm">
+                                    Display <input t:type="textfield" t:value="numberOfLogEntries"
+                                        t:id="numberOfLogEntries" data-dojo-type="dijit.form.TextBox"
+                                        style="width: 4em;" /> log entries
+                                    <input t:type="submit" data-dojo-type="dijit.form.Button"
+                                        data-dojo-props="label:'Reload log'" />
+                                </t:form>
+                                <div id="log" class="log">
+                                    <table>
+                                        <tbody>
+                                            <t:loop t:source="logs" t:value="log" t:index="logIndex">
+                                                <tr class="${trLogClass}">
+                                                    <td class="timestamp"><t:output
+                                                            t:format="literal:dd/MM/yyyy HH:mm:ss.SSS"
+                                                            t:value="log.timestamp" /></td>
+                                                    <td class="level ${log.level}">${log.level}</td>
+                                                    <td class="sessionId">${log.sessionId}</td>
+                                                    <td class="message"><t:outputraw value="transformedLogMsg" /></td>
+                                                </tr>
+                                                <t:if test="log.exceptionMessage">
+                                                    <tr class="exception">
+                                                        <td colspan="4"><t:outputraw
+                                                                value="transformedExceptionMsg" /> <br /> <t:outputraw
+                                                                value="transformedExceptionStackTrace" /></td>
+                                                    </tr>
+                                                </t:if>
+                                            </t:loop>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </t:zone>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <t:if test="hard">
+            <div t:type="CoreInspector" />
+            <div t:type="BoardInspector" hard="hard" />
+        </t:if>
+    </div>
+</div>

@@ -1,0 +1,4 @@
+<html t:type="layout" t:title="Firmware error" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+   <h3>No firmware found in your board for this application.</h3>
+</html>

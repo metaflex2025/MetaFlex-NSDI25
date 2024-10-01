@@ -1,0 +1,42 @@
+{
+    "logic": {
+        "type": "CLB LUTs",
+        "used": "108885",
+        "fixed": "0",
+        "prohibited": "0",
+        "available": "1728000",
+        "percent_used": "6.30"
+    },
+    "registers": {
+        "type": "CLB Registers",
+        "used": "165611",
+        "fixed": "0",
+        "prohibited": "0",
+        "available": "3456000",
+        "percent_used": "4.79"
+    },
+    "blockMemory": {
+        "type": "Block RAM Tile",
+        "used": "339",
+        "fixed": "0",
+        "prohibited": "0",
+        "available": "2688",
+        "percent_used": "12.61"
+    },
+    "largeBlockMemory": {
+        "type": "URAM",
+        "used": "256",
+        "fixed": "0",
+        "prohibited": "0",
+        "available": "1280",
+        "percent_used": "20.00"
+    },
+    "dsp": {
+        "type": "DSPs",
+        "used": "4",
+        "fixed": "0",
+        "prohibited": "0",
+        "available": "12288",
+        "percent_used": "0.03"
+    }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter">
+    <t:zone id="${zoneClientId}" t:id="virtualRegistersZone">
+        <t:form context="[core, page]" zone="^" t:id="virtualRegisterForm">
+            <t:hidden value="core" />
+            <t:hidden value="page" />
+
+            <input t:type="textfield" t:id="registerName"
+                t:value="registerName"
+                placeholder="Register name"
+                t:validate="required" data-dojo-type="dijit.form.TextBox" />
+
+            <t:select t:id="register1" blankOption="never" model="monitorables" value="register1" data-dojo-type="dijit.form.Select"/>
+            <t:select t:id="operation" blankOption="never" value="operation" data-dojo-type="dijit.form.Select" />
+            <t:select t:id="register2" blankOption="never" model="monitorables" value="register2" data-dojo-type="dijit.form.Select" />
+
+            <input t:type="submit" t:event="addNewVirtualRegister" data-dojo-type="dijit.form.Button"
+                                                data-dojo-props="label:'Add virtual register'" />
+        </t:form>
+        <table class="registers virtualRegisters">
+            <thead>
+                <tr>
+                    <th class="number">*</th>
+                    <th class="name">Name</th>
+                    <th class="value">Value</th>
+                    <th class="action">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t:type="loop" t:id="virtualRegistersLoop" t:source="virtualRegisters" t:value="virtualRegister"
+                    id="${virtualRegister.URI}" t:index="var:index">
+                    <td class="number">${var:index}</td>
+                    <td class="name">${virtualRegister.name}</td>
+                    <td class="value">${virtualRegister.value}</td>
+                    <td class="action"><button data-dojo-type="dijit.form.Button"
+                            data-dojo-props="label:'Follow', onClick:function(){
+                                        addChart('${core.id}',${addChartOptions});
+                                    }" /></td>
+                    <div data-dojo-type="dijit.Tooltip"
+                        data-dojo-props="connectId:'${virtualRegister.URI}',position:['above','below'],showDelay:0">${virtualRegister.description}</div>
+                </tr>
+            </tbody>
+        </table>
+        <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+            <span class="dijitReset dijitInline dijitButtonNode">
+                <a class="dijitReset dijitInline dijitButtonText" t:type="eventLink" t:zone="prop:zoneClientId" t:event="refresh"
+                    context="[core, page]"
+                >
+                    Refresh values
+                </a>
+            </span>
+        </span>
+    </t:zone>
+</div>

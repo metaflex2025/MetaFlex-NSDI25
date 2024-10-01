@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter" id="${clientId}">
+    <t:zone id="${zoneClientId}" t:id="pageZone">
+        <t:form zone="^">
+            <t:hidden value="page" />
+
+            <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                <span class="dijitReset dijitInline dijitButtonNode">
+                    <input class="dijitReset dijitInline dijitButtonText" t:id="pageSelectSubmit" t:type="submit" t:event="reloadPage" value="Reload page" />
+                </span>
+            </span>
+
+            &nbsp;
+            
+            <t:label for="pageId">Page id</t:label>
+            &nbsp;
+
+            <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                <span class="dijitReset dijitInline dijitButtonNode">
+                    <input class="dijitReset dijitInline dijitButtonText" t:id="pagePrevSubmit" t:type="submit" t:event="selectPrevElement" value="&lt;" />
+                </span>
+            </span>
+            
+            <input t:type="select" t:id="pageId" 
+            	value="page.idRegister.value" model="pageSelectModel" 
+            	data-dojo-type="dijit.form.ComboBox" t:validate="required,regexp=^[0-9]*$"
+                style="width: 8em" onchange="document.getElementById('${submitId}').click()" />
+
+            <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                <span class="dijitReset dijitInline dijitButtonNode">
+                    <input class="dijitReset dijitInline dijitButtonText" t:id="pageNextSubmit" t:type="submit" t:event="selectNextElement" value="&gt;" />
+                </span>
+            </span>
+        </t:form>
+        <t:if test="page.hasMonitorables()">
+            <hr />
+            <div t:type="monitorableInspector" t:core="page.parent" t:page="page" t:id="monitorableInspector" />
+        </t:if>
+        <t:if test="page.hasConfigurables()">
+            <hr />
+            <div t:type="configurableInspector" t:core="page.parent" t:page="page" t:id="configurableInspector" />
+        </t:if>
+        <t:if test="page.hasCommands()">
+            <hr />
+            <div t:type="commandInspector" t:core="page.parent" t:page="page" t:id="commandInspector" />
+        </t:if>
+    </t:zone>
+</div>

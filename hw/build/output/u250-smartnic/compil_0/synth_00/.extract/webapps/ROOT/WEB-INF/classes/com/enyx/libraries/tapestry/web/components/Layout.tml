@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <link href="enyx/images/favicon.ico" rel="shortcut icon" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>${appName}</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="webjars/bootstrap/3.1.1/css/bootstrap.css" />
+        
+        <!-- Slider -->
+        <link rel="stylesheet" href="webjars/angular-slider/0.2.14/slider.css" />
+        
+        <!-- Font awesome -->
+        <link rel='stylesheet' href='webjars/font-awesome/4.3.0/css/font-awesome.css' />
+        
+        <!-- HighlightJS -->
+        <link rel='stylesheet' href='webjars/highlightjs/8.2-1/styles/default.css' />
+
+        <!-- Main application styles -->
+        <link rel="stylesheet" href="enyx/styles/main.css" />
+    </head>
+
+    <body data-ng-app="enyx.web.application.agent">
+        <!-- Main content -->
+        <div class="container-fluid">
+            <div data-enyx-main-nav=""></div>
+            <div data-ui-view=""></div>
+        </div>
+
+        <!-- Angular JS -->
+        <script src="webjars/angularjs/1.2.16/angular.js"></script>
+        <script src="webjars/angularjs/1.2.16/angular-route.js"></script>
+        
+        <!-- Angular UI -->
+        <script src="webjars/angular-ui-bootstrap/0.11.2/ui-bootstrap.js"></script>
+        <script src="webjars/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"></script>
+        <script src="webjars/angular-ui-router/0.2.11/angular-ui-router.js"></script>
+        <script src="webjars/angular-slider/0.2.14/slider.js"></script>
+
+        <!--  Translate -->
+        <script src="webjars/angular-translate/2.6.1/angular-translate.js"></script>
+        <script src="webjars/angular-translate-loader-partial/2.6.0/angular-translate-loader-partial.js"></script>
+        
+        <!-- Highlight JS -->
+        <script src="webjars/highlightjs/8.2-1/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+        
+        <!-- Main Enyx application script -->
+        <script src="enyx/app/main.js"></script>
+        <script src="enyx/app/jsonrpc.js"></script>
+        <script src="enyx/app/application/monitoring.js"></script>
+        <script src="enyx/app/application/configuration.js"></script>
+        <script src="enyx/app/board/licenses.js"></script>
+        <script src="enyx/app/board/upgrade.js"></script>
+        
+        <script src="app/agent.js"></script>
+    </body>
+    
+</html>

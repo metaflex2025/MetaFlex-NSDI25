@@ -1,0 +1,534 @@
+
+.claro-yellow .dijitButton .dijitButtonNode,
+.claro-yellow .dijitDropDownButton .dijitButtonNode,
+.claro-yellow .dijitComboButton .dijitButtonNode,
+.claro-yellow .dijitToggleButton .dijitButtonNode {
+  background-image: url(/images/button-yellow.png);
+}
+
+
+.claro-yellow .dijitComboBoxHighlightMatch {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dojoDndItemBefore, .claro-yellow .dojoDndItemAfter {
+  border-top: 1px solid #c09d75;
+}
+.claro-yellow table.dojoDndAvatar {
+  border: 1px solid #c7bcb5;
+}
+
+.claro-yellow.dojoDndMove .dojoDndAvatarHeader {
+  background-color: #8383f5;
+}
+.claro-yellow.dojoDndCopy .dojoDndAvatarHeader {
+  background-color: #8383f5;
+}
+.claro-yellow.dojoDndMove .dojoDndAvatarCanDrop .dojoDndAvatarHeader {
+  background-color: #8de697;
+}
+.claro-yellow.dojoDndCopy .dojoDndAvatarCanDrop .dojoDndAvatarHeader {
+  background-color: #8de697;
+}
+.claro-yellow .dijitTextBoxError .dijitValidationContainer {
+  background-color: #6464d4;
+  border: solid #6464d4 0;
+}
+.claro-yellow .dijitTextBox, .claro-yellow .dijitTextBox .dijitButtonNode {
+  
+  border-color: #c7bcb5;
+}
+.claro-yellow .dijitTextBoxHover, .claro-yellow .dijitTextBoxHover .dijitButtonNode {
+  border-color: #c09d75;
+}
+.claro-yellow .dijitTextBoxHover {
+  background-color: #fef2e5;
+}
+.claro-yellow .dijitTextBoxError, .claro-yellow .dijitTextBoxError .dijitButtonNode {
+  border-color: #6464d4;
+}
+.claro-yellow .dijitTextBoxFocused, .claro-yellow .dijitTextBoxFocused .dijitButtonNode {
+  border-color: #c09d75;
+}
+.claro .dijitTextBoxErrorFocused, .claro-yellow .dijitTextBoxErrorFocused .dijitButtonNode {
+  border-color: #5050ce;
+}
+.claro .dijitComboBoxOpenOnClickHover .dijitButtonNode, .claro-yellow .dijitComboBox .dijitDownArrowButtonHover {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitComboBox .dijitHasDropDownOpen {
+  background-color: #fabd7d;
+}
+.claro-yellow .dijitButton .dijitButtonNode,
+.claro-yellow .dijitDropDownButton .dijitButtonNode,
+.claro-yellow .dijitComboButton .dijitButtonNode,
+.claro-yellow .dijitToggleButton .dijitButtonNode {
+  
+  border: 1px solid #c09d75;
+  background-color: #fef2e5;
+}
+.claro-yellow .dijitButtonHover .dijitButtonNode,
+.claro-yellow .dijitDropDownButtonHover .dijitButtonNode,
+.claro-yellow .dijitComboButton .dijitButtonNodeHover,
+.claro-yellow .dijitComboButton .dijitDownArrowButtonHover,
+.claro-yellow .dijitToggleButtonHover .dijitButtonNode {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitButtonActive .dijitButtonNode,
+.claro-yellow .dijitDropDownButtonActive .dijitButtonNode,
+.claro-yellow .dijitComboButtonActive .dijitButtonNode,
+.claro-yellow .dijitToggleButtonActive .dijitButtonNode,
+.claro-yellow .dijitStackController .dijitToggleButtonChecked .dijitButtonNode {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitSelect {
+  border: 1px solid #c7bcb5;
+}
+.claro-yellow .dijitSelect .dijitButtonContents {
+  border: 0 solid #c7bcb5;
+}
+.claro-yellow .dijitSelectHover {
+  border: 1px solid #c09d75;
+  background-color: #fef2e5;
+}
+.claro-yellow .dijitSelectHover .dijitButtonContents {
+  border-color: #c09d75;
+}
+.claro-yellow .dijitSelectHover .dijitArrowButton {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitSelectFocused {
+  border: 1px solid #c09d75;
+}
+.claro-yellow .dijitSelectFocused .dijitButtonContents {
+  border-color: #c09d75;
+}
+.claro-yellow .dijitSelectFocused .dijitArrowButton {
+  background-color: #fabe7d;
+}
+
+.claro-yellow .dijitSelectMenu .dijitMenuSeparatorTop {
+  border-bottom: 1px solid #c09d75;
+}
+.claro-yellow .dijitTabPaneWrapper,
+.claro-yellow .dijitTabContainerTop-tabs,
+.claro-yellow .dijitTabContainerBottom-tabs,
+.claro-yellow .dijitTabContainerLeft-tabs,
+.claro-yellow .dijitTabContainerRight-tabs {
+  
+  border-color: #c7bcb5;
+}
+.claro-yellow .dijitTabHover .dijitTabInnerDiv {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitTabActive .dijitTabInnerDiv {
+  background-color: #fabd7d;
+}
+.claro-yellow .dijitTabChecked .dijitTabInnerDiv {
+  background-color: #fae5cf;
+}
+.claro-yellow .dijitTabContent {
+  border: 1px solid #c7bcb5;
+}
+.claro-yellow .dijitTabHover .dijitTabContent {
+  border-color: #c09d75;
+}
+.claro-yellow .dijitTabActive .dijitTabContent {
+  border-color: #c09d75;
+}
+.claro-yellow .dijitTabChecked .dijitTabContent {
+  border-color: #c7bcb5;
+}
+.claro-yellow .tabStripButton {
+  background-color: #fef2e5;
+  border: 1px solid #c7bcb5;
+}
+.claro-yellow .tabStripButtonHover {
+  background-color: #ffd6ab;
+}
+.claro-yellow .tabStripButtonActive {
+  background-color: #fabd7d;
+}
+.claro-yellow .dijitTabListContainer-top .tabStripButtonDisabled, .claro-yellow .dijitTabListContainer-bottom .tabStripButtonDisabled {
+  border: 1px solid #c7bcb5;
+  
+}
+.claro-yellow .dijitTabContainerNested .dijitTabContainerTop-tabs {
+  border-bottom: solid 1px #c7bcb5;
+}
+.claro-yellow .dijitTabContainerTabListNested .dijitTabContent {
+  border-color: rgba(192, 157, 118, 0);
+}
+.claro-yellow .dijitTabContainerTabListNested .dijitTabHover .dijitTabContent {
+  background-color: #fef2e5;
+  border: solid 1px #fae5cf;
+}
+.claro-yellow .dijitTabContainerTabListNested .dijitTabActive .dijitTabContent {
+  border: solid 1px #c09d75;
+  background: #ffd6ab url(layout/images/tabNested.png) repeat-x;
+}
+.claro-yellow .dijitTabContainerTabListNested .dijitTabChecked .dijitTabContent {
+  border: solid 1px #c09d75;
+  background-color: #fae5cf;
+}
+.claro-yellow .dijitDialog {
+  border: 1px solid #c09d75;
+}
+.claro-yellow .dijitDialogPaneContent {
+  border-top: 1px solid #c09d75;
+}
+.claro-yellow .dijitDialogTitleBar {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitTooltipContainer {
+  border: 1px solid #c09d75;
+}
+.claro-yellow .dijitAccordionInnerContainer {
+  border: solid 1px #c7bcb5;
+}
+.claro-yellow .dijitAccordionContainer .dijitAccordionChildWrapper {
+  border: 1px solid #c09d75;
+}
+.claro-yellow .dijitAccordionInnerContainerActive {
+  border: 1px solid #c09d75;
+  background-color: #fabd7d;
+}
+.claro-yellow .dijitAccordionInnerContainerSelected {
+  border-color: #c09d75;
+  background-color: #fae5cf;
+}
+.claro-yellow .dijitAccordionInnerContainerHover, .claro-yellow .dijitAccordionInnerContainerSelectedActive {
+  border: 1px solid #c09d75;
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitAccordionInnerContainerSelectedHover .yellow .dijitAccordionChildWrapper, .claro .dijitAccordionInnerContainerSelectedActive .dijitAccordionChildWrapper {
+  border: 1px solid #c09d75 !important;
+}
+.claro-yellow .dijitCalendar {
+  border: solid 1px #c7bcb5;
+  background-color: #fae5cf;
+}
+.claro-yellow .dijitCalendarHover, .claro-yellow .dijitCalendar:hover, .claro .dijitCalendarActive {
+  background-color: #ffd6ab;
+  border: solid 1px #c09d75;
+}
+.claro-yellow .dijitCalendarDayLabelTemplate {
+  border-bottom: 1px solid #c7bcb5;
+}
+.claro .dijitCalendarPreviousMonth, .claro-yellow .dijitCalendarNextMonth {
+  background-color: #fef2e5;  
+}
+.claro-yellow .dijitCalendarDateTemplate .dijitCalendarDateLabel {
+  background-color: rgba(251, 212, 171, 0);
+}
+.claro-yellow .dijitCalendarPreviousMonth .dijitCalendarDateLabel, .claro-yellow .dijitCalendarNextMonth .dijitCalendarDateLabel {
+  color: #c09d75;
+  border-color: #fef2e5;  
+}
+.claro-yellow .dijitCalendarHoveredDate .dijitCalendarDateLabel, .claro-yellow .dijitCalendarEnabledDate:hover .dijitCalendarDateLabel {
+  background-color: #ffd6ab;
+  border: solid 1px #c09d75;
+}
+.claro-yellow .dijitCalendarNextYearHover,
+.yellow .claro-yellow .dijitCalendarNextYear:hover,
+.claro-yellow .dijitCalendarPreviousYearHover,
+.claro-yellow .dijitCalendarPreviousYear:hover {
+  background-color: #fef2e5;
+}
+.claro-yellow .dijitCalendarNextYearActive, .claro-yellow .dijitCalendarNextYear:active.claro .dijitCalendarPreviousYearActive, .claro-yellow .dijitCalendarPreviousYear:active {
+  border: solid 1px #c09d75;  
+  background-color: #fabd7d;
+}
+.claro-yellow .dijitCalendarActiveDate .dijitCalendarDateLabel, .claro-yellow .dijitCalendarEnabledDate:active .dijitCalendarDateLabel {
+  background-color: #fabd7d;
+}
+.claro-yellow .dijitCalendarSelectedDate .dijitCalendarDateLabel {
+  background-color: #ffd6ab;
+  border-color: #c09d75;
+}
+.claro-yellow .dijitCalendar .dijitDropDownButton .dijitButtonNode {
+  border: solid 1px #c7bcb5;
+}
+.claro-yellow .dijitCalendar .dijitDropDownButtonHover .dijitButtonNode, .claro-yellow .dijitCalendar .dijitDropDownButton:hover .dijitButtonNode {
+  background-color: #fef2e5;
+}
+.claro-yellow .dijitCalendarMonthMenu {
+  border-color: #c09d75;
+}
+.claro-yellow .dijitCalendarMonthMenu .dijitCalendarMonthLabelHover, .claro-yellow .dijitCalendarMonthMenu .dijitCalendarMonthLabel:hover {
+  background-color: #ffd6ab;
+  border-color: #c09d75;
+}
+.claro-yellow .dijitMenuBar {
+  border: 1px solid #c7bcb5;
+}
+.claro-yellow .dijitMenu {
+  border: 1px solid #c09d75;
+}
+.claro-yellow .dijitMenuPassive .dijitMenuItemHover, .claro-yellow .dijitMenuPassive .dijitMenuItemSelected {
+  background-color: #ffd6ab;
+  border: solid 1px #c09d75;
+}
+.claro-yellow .dijitMenuActive .dijitMenuItemHover, .claro-yellow .dijitMenuActive .dijitMenuItemSelected {
+  border: solid 1px #c09d75;
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitMenuActive .dijitMenuItemActive {
+  background-color: #fabd7d;
+}
+.claro-yellow .dijitMenuSeparatorTop {
+  border-bottom: 1px solid #c7bcb5;
+}
+.claro-yellow .dijitComboBoxMenu .dijitMenuItemSelected {
+  border-color: #c09d75;
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitComboBoxMenu .dijitMenuItemHover {
+  border-color: #c09d76;
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitComboBoxMenuActive .dijitMenuItemSelected {
+  background-color: #fabd7d;  
+}
+.claro-yellow .dijitSliderFocused .dijitSliderBar {
+  border-color: #c09d75;
+}
+.claro-yellow .dijitSliderHover .dijitSliderBar {
+  border-color: #c09d75;
+}
+
+.claro-yellow .dijitSlider .dijitSliderProgressBarH, .claro-yellow .dijitSlider .dijitSliderLeftBumper {
+  border-color: #c7bcb5;
+  background-color: #fae5cf;
+}
+.claro-yellow .dijitSlider .dijitSliderRemainingBarH, .claro-yellow .dijitSlider .dijitSliderRightBumper {
+  border-color: #c7bcb5;
+}
+.claro-yellow .dijitSliderRightBumper {
+  border-right: solid 1px #c7bcb5;
+}
+.claro-yellow .dijitSliderLeftBumper {
+  border-left: solid 1px #c7bcb5;
+}
+.claro-yellow .dijitSliderHover .dijitSliderProgressBarH, .yellow  .claro .dijitSliderHover .dijitSliderLeftBumper {
+  background-color: #ffd6ab;
+  border-color: #c09d75;
+}
+.claro-yellow .dijitSliderHover .dijitSliderRemainingBarH, .claro-yellow .dijitSliderHover .dijitSliderRightBumper {
+  border-color: #c09d75;
+}
+.claro-yellow .dijitSliderFocused .dijitSliderProgressBarH, .claro-yellow .dijitSliderFocused .dijitSliderLeftBumper {
+  background-color: #ffd6ab;
+  border-color: #c09d75;
+}
+.claro-yellow .dijitSliderFocused .dijitSliderRemainingBarH, .claro-yellow .dijitSliderFocused .dijitSliderRightBumper {
+  border-color: #c09d75;
+}
+.claro-yellow .dijitSlider .dijitSliderProgressBarV, .claro-yellow .dijitSlider .dijitSliderBottomBumper {
+  border-color: #c7bcb5;
+  background-color: #fae5cf;
+}
+.claro-yellow .dijitSlider .dijitSliderRemainingBarV, .claro-yellow .dijitSlider .dijitSliderTopBumper {
+  border-color: #c7bcb5;
+}
+.claro-yellow .dijitSliderBottomBumper {
+  border-bottom: solid 1px #c7bcb5;
+}
+.claro-yellow .dijitSliderTopBumper {
+  border-top: solid 1px #c7bcb5;
+}
+.claro-yellow .dijitSliderHover .dijitSliderProgressBarV, .claro-yellow .dijitSliderHover .dijitSliderBottomBumper {
+  background-position: -36px 0;
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitSliderFocused .dijitSliderProgressBarV, .claro-yellow .dijitSliderFocused .dijitSliderBottomBumper {
+  background-position: -56px 0;
+  background-color: #ffd6ab;
+}
+
+.claro-yellow .dijitSliderDecrementIconH,
+.claro-yellow .dijitSliderIncrementIconH,
+.claro-yellow .dijitSliderDecrementIconV,
+.claro-yellow .dijitSliderIncrementIconV {
+  border: solid 1px #c7bcb5;
+}
+
+.claro-yellow .dijitSliderButtonContainerV .dijitSliderDecrementButtonHover,
+.claro-yellow .dijitSliderButtonContainerH .dijitSliderDecrementButtonHover,
+.claro-yellow .dijitSliderButtonContainerV .dijitSliderIncrementButtonHover,
+.claro-yellow .dijitSliderButtonContainerH .dijitSliderIncrementButtonHover {
+  background-color: #fae5cf;
+}
+.claro-yellow .dijitSliderButtonContainerV .dijitSliderDecrementButtonActive,
+.claro-yellow .dijitSliderButtonContainerH .dijitSliderDecrementButtonActive,
+.claro-yellow .dijitSliderButtonContainerV .dijitSliderIncrementButtonActive,
+.claro-yellow .dijitSliderButtonContainerH .dijitSliderIncrementButtonActive {
+  background-color: #ffd6ab;
+  border-color: #c09d75;
+}
+.claro-yellow  .dijitColorPalette {
+  border: 1px solid #c7bcb5;
+}
+
+.claro-yellow .dijitInlineEditBoxDisplayModeHover {
+  background-color: #fef2e5;
+  border: solid 1px #c09d75;
+}
+.claro-yellow .dijitProgressBarEmpty {
+  
+  border-color: #c09d75;
+}
+.claro-yellow .dijitProgressBarTile {
+  
+  background: #ffd6ab url(images/progressBarFull.png) repeat-x top;
+}
+
+.claro-yellow .dijitProgressBarFull {
+  border-right: 1px solid #c09d75;
+}
+.claro-yellow .dijitTimePicker {
+  border: 1px #c7bcb5 solid;
+}
+.claro-yellow .dijitTimePickerMarker {
+  
+  background-color: #fef2e5;
+}
+.claro-yellow .dijitTimePickerTickHover,
+.claro-yellow .dijitTimePickerMarkerHover,
+.claro-yellow .dijitTimePickerMarkerSelected,
+.claro-yellow .dijitTimePickerTickSelected {
+  background-color: #fabd7d;
+  border: solid 1px #c7bcb5;
+}
+.claro-yellow .dijitTimePicker .dijitButtonNode {
+  border-color: #c7bcb5;
+}
+.claro-yellow .dijitTimePicker .dijitUpArrowHover, .claro-yellow .dijitTimePicker .dijitDownArrowHover {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitSplitContainer-child, .claro-yellow .dijitBorderContainer-child {
+  
+  border: 1px #c7bcb5 solid;
+}
+.claro-yellow .dijitSplitterH .dijitSplitterThumb {
+  background: #c7bcb5 none;
+}
+.claro-yellow .dijitSplitterV .dijitSplitterThumb {
+  background: #c7bcb5 none;
+}
+.claro-yellow .dijitSplitterHHover .dijitSplitterThumb {
+  background: #c09d75 none;
+}
+.claro-yellow .dijitSplitterVHover .dijitSplitterThumb {
+  background: #c09d75 none;
+}
+.dj_ie6 .dijitSplitterHHover, .dj_ie6 .claro-yellow .dijitSplitterVHover {
+  background-color: #fae5cf;
+}
+.claro-yellow .dijitSplitterHActive, .claro-yellow .dijitSplitterVActive {
+  background-color: #ffd6ab;
+}
+
+.claro-yellow .dijitTreeRow, .claro-yellow .dijitTreeNode .dojoDndItemBefore, .claro-yellow .dijitTreeNode .dojoDndItemAfter {
+  background-color: rgba(255, 214, 171, 0);
+  border-color: rgba(192, 157, 118, 0);
+}
+.claro-yellow .dijitTreeRowSelected {
+  background-color: #fae5cf;
+  border: solid 1px #c09d75;
+}
+.claro-yellow .dijitTreeRowHover {
+  background-color: #ffd6ab;
+  border: solid 1px #c09d75;
+}
+.claro-yellow .dijitTreeRowActive {
+  background-color: #fabd7d;
+  border: solid 1px #c09d75;
+}
+.claro-yellow .dijitTreeNode .dojoDndItemBefore .dijitTreeContent {
+  border-top: 2px solid #c09d75;
+}
+.claro-yellow .dijitTreeNode .dojoDndItemAfter .dijitTreeContent {
+  border-bottom: 2px solid #c09d75;
+}
+ 
+.claro-yellow .dijitToolbar {
+  border-bottom: 1px solid #c7bcb5;
+}
+.claro-yellow .dijitToolbar .dijitButton .dijitButtonNode,
+.claro-yellow .dijitToolbar .dijitDropDownButton .dijitButtonNode,
+.claro-yellow .dijitToolbar .dijitComboButton .dijitButtonNode,
+.claro-yellow .dijitToolbar .dijitToggleButton .dijitButtonNode,
+.claro-yellow .dijitToolbar .dijitComboBox .dijitButtonNode {
+  background-color: rgba(255, 214, 171, 0);
+}
+.yellow .dj_ie .claro .dijitToolbar .dijitButtonHover .dijitButtonNode,
+.yellow .dj_ie .claro .dijitToolbar .dijitDropDownButtonHover .dijitButtonNode,
+.yellow .dj_ie .claro .dijitToolbar .dijitComboButton .dijitButtonNodeHover,
+.yellow .dj_ie .claro .dijitToolbar .dijitComboButton .dijitDownArrowButtonHover,
+.yellow .dj_ie .claro .dijitToolbar .dijitToggleButtonHover .dijitButtonNode {
+  
+  background-color: #ffd6ab;
+}
+.yellow .dj_ie .claro .dijitToolbar .dijitButtonActive .dijitButtonNode,
+.yellow .dj_ie .claro .dijitToolbar .dijitDropDownButtonActive .dijitButtonNode,
+.yellow .dj_ie .claro .dijitToolbar .dijitComboButtonActive .dijitButtonNode,
+.yellow .dj_ie .claro .dijitToolbar .dijitToggleButtonActive .dijitButtonNode {
+  
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitToolbar .dijitButtonHover .dijitButtonNode,
+.claro-yellow .dijitToolbar .dijitDropDownButtonHover .dijitButtonNode,
+.claro-yellow .dijitToolbar .dijitToggleButtonHover .dijitButtonNode,
+.claro-yellow .dijitToolbar .dijitComboButtonHover .dijitButtonNode {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitToolbar .dijitComboButtonHover .dijitButtonNode, .claro-yellow .dijitToolbar .dijitComboButtonHover .dijitDownArrowButton {
+  background-color: #fffff3;
+}
+.claro-yellow .dijitToolbar .dijitComboButtonHover .dijitButtonNodeHover, .claro-yellow .dijitToolbar .dijitComboButtonHover .dijitDownArrowButtonHover {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitToolbar .dijitButtonActive .dijitButtonNode, .claro-yellow .dijitToolbar .dijitDropDownButtonActive .dijitButtonNode, .claro-yellow .dijitToolbar .dijitToggleButtonActive .dijitButtonNode {
+  background-color: #fabd7d;
+}
+.claro-yellow .dijitToolbar .dijitComboButtonActive .dijitButtonNode, .claro-yellow .dijitToolbar .dijitComboButtonActive .dijitDownArrowButton {
+  background-color: #fffff3;
+}
+.claro-yellow .dijitToolbar .dijitComboButtonActive .dijitButtonNodeActive {
+  background-color: #fabd7d;
+}
+.claro-yellow .dijitToolbar .dijitComboButtonActive .dijitDownArrowButtonActive {
+  background-color: #fabd7d;
+}
+.claro-yellow .dijitToolbar .dijitToggleButtonChecked .dijitButtonNode {
+  border-color: #c09d75;
+}
+.claro-yellow .dijitEditor {
+  border: 1px solid #c7bcb5;
+}
+.claro-yellow .dijitEditorHover .dijitEditorIFrameContainer, .claro-yellow .dijitEditorHover .dijitEditorIFrameContainer .dijitEditorIFrame {
+  background-color: #fef2e5;
+} 
+.claro-yellow .dijitTitlePaneTitle {
+  border: 1px solid #c7bcb5;
+}
+.claro-yellow .dijitTitlePaneTitleHover {
+  background-color: #ffd6ab;
+  border-color: #c09d75;
+}
+.claro-yellow .dijitTitlePaneTitleActive {
+  background-color: #fabd7d;
+  border-color: #c09d75;
+}
+.claro-yellow .dijitTitlePaneContentOuter {
+  border: 1px solid #c7bcb5;
+}
+.claro-yellow .dijitUpArrowButtonActive, .claro-yellow .dijitDownArrowButtonActive {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitSpinner .dijitUpArrowButtonHover, .claro-yellow .dijitSpinner .dijitDownArrowButtonHover, .claro-yellow .dijitSpinnerFocused .dijitArrowButton {
+  background-color: #ffd6ab;
+}
+.claro-yellow .dijitSpinner .dijitDownArrowButtonActive, .claro-yellow .dijitSpinner .dijitUpArrowButtonActive {
+  background-color: #fabe7d;
+}

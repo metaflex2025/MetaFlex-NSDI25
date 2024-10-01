@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter">
+    <t:zone id="${zoneClientId}" t:id="monitorablesZone">
+        <table class="registers monitorables">
+            <thead>
+                <tr>
+                    <th class="number">*</th>
+                    <th class="name">Name</th>
+                    <th class="value">Value</th>
+                    <th class="action">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t:type="loop" t:id="monitorablesLoop" t:source="monitorables" t:value="monitorable"
+                    id="${monitorable.URI}">
+                    <td class="number">${monitorable.registerDesc.number}.${monitorable.registerDesc.offset}</td>
+                    <td class="name">${monitorable.name}</td>
+                    <td class="value">${monitorable.value}</td>
+                    <td class="action"><button data-dojo-type="dijit.form.Button"
+                            data-dojo-props="label:'Follow', onClick:function(){
+                                        addChart('${core.id}',${addChartOptions});
+                                    }" /></td>
+                    <div data-dojo-type="dijit.Tooltip"
+                        data-dojo-props="connectId:'${monitorable.URI}',position:['above','below'],showDelay:0">${monitorable.description}</div>
+                </tr>
+            </tbody>
+        </table>
+        <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+            <span class="dijitReset dijitInline dijitButtonNode">
+                <a class="dijitReset dijitInline dijitButtonText" t:type="eventLink" t:zone="prop:zoneClientId" t:event="refresh"
+                    context="[core, page]"
+                >
+                    Refresh values
+                </a>
+            </span>
+        </span>
+    </t:zone>
+</div>

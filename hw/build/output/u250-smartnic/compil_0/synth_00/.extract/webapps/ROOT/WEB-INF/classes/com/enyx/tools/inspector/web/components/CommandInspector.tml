@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter">
+    <t:zone id="${zoneClientId}" t:id="commandsZone">
+        <t:form zone="^" clientValidation="NONE" t:id="commandsForm">
+            <t:hidden value="core" />
+            <t:hidden value="page" />
+            <t:loop t:id="commandsLoop" t:source="commands" t:value="command">
+                <div class="command">
+                    <div class="left">
+                        <span class="name">${command.name}</span>
+                        <t:if test="command.description">
+                            <br />
+                            <em class="description">${command.description}</em>
+                        </t:if>
+                    </div>
+                    <div class="right">
+                        <span class="dijit dijitReset dijitInline btn btn-primary dijitButton">
+                            <span class="dijitReset dijitInline dijitButtonNode">
+                                <input class="dijitReset dijitInline dijitButtonText" t:type="submit" t:context="command" t:defer="false" t:event="execute" value="Execute" />
+                            </span>
+                        </span>
+                    </div>
+                    <div class="clear" />
+                </div>
+                <table class="registers commandArgs">
+                    <caption>Arguments</caption>
+                    <tbody>
+                        <tr t:type="loop" t:id="commandArgsLoop" t:source="command.arguments" t:value="argument"
+                            class="argument" id="${argument.URI}">
+                            <td class="number">${argument.registerDesc.number}.${argument.registerDesc.offset}</td>
+                            <td class="name padding-left">${argument.name}</td>
+                            <td class="value"><t:if test="argument.registerDesc.enumeration">
+                                    <input t:type="select" id="${argument.name}" t:value="argument.value"
+                                        t:model="argument.registerDesc.enumValues" data-dojo-type="dijit.form.ComboBox" />
+                                    <p:else>
+                                        <input t:type="textfield" id="${argument.name}" t:value="argument.value"
+                                            data-dojo-type="dijit.form.TextBox" />
+                                    </p:else>
+                                </t:if></td>
+                            <div data-dojo-type="dijit.Tooltip"
+                                data-dojo-props="connectId:'${argument.URI}',position:['above','below'],showDelay:0">${argument.description}</div>
+                        </tr>
+                    </tbody>
+                </table>
+                <p />
+                <table class="registers commandArgs">
+                    <caption>Returned arguments</caption>
+                    <tbody>
+                        <tr t:type="loop" t:id="commandRetArgsLoop" t:source="command.returnArguments"
+                            t:value="returnedArgument" class="argument" id="${returnedArgument.URI}">
+                            <td class="number">${returnedArgument.registerDesc.number}.${returnedArgument.registerDesc.offset}</td>
+                            <td class="name padding-left">${returnedArgument.name}</td>
+                            <td class="value">${returnedArgument.value}</td>
+                            <div data-dojo-type="dijit.Tooltip"
+                                data-dojo-props="connectId:'${returnedArgument.URI}',position:['above','below'],showDelay:0">${returnedArgument.description}</div>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr class="command" />
+            </t:loop>
+        </t:form>
+    </t:zone>
+</div>

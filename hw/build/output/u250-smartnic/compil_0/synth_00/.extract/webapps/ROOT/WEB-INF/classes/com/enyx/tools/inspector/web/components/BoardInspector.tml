@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter" id="${clientId}">
+    <div>
+        <div id="${clientId}_mainData" data-dojo-type="dijit.TitlePane" data-dojo-props="title: 'Board data'">
+            <table style="float: left;">
+                <tr>
+                    <td>UID:</td>
+                    <td>${board.id}</td>
+                </tr>
+                <tr>
+                    <td>Pcie Slot Number:</td>
+                    <td>${board.PcieSlotNumber}</td>
+                </tr>
+                <tr>
+                    <td>Cores Count:</td>
+                    <td>${board.coresCount}</td>
+                </tr>
+                <tr>
+                    <td>UID of root resource:</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Firmware Hash:</td>
+                    <td>${board.firmwareHash}</td>
+                </tr>
+            </table>
+            <div style="float: right;">
+                <t:form t:clientValidation="NONE" t:id="dumpBoardForm" target="_blank">
+                    <t:submit data-dojo-type="dijit.form.Button" data-dojo-props="label:'Dump'"
+                        t:event="dumpBoard" t:context="board" />
+                </t:form>
+            </div>
+            <div style="clear: both" />
+        </div>
+        <div id="${clientId}_firmwareData" data-dojo-type="dijit.TitlePane"
+            data-dojo-props="title: 'Firmware informations'">No Information on this firmware in database</div>
+    </div>
+</div>

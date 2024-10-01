@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter">
+    <head>
+        <link rel="shortcut icon" href="${context:images/favicon.ico}" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Enyx - ${title}</title>
+    </head>
+    <body class="${getThemeCss()}">
+        <fieldset class="alerts">
+            <legend>Messages</legend>
+            <t:alerts />
+        </fieldset>
+
+        <div style="display: flex;align-items: center;width:65%">
+            <img alt="Enyx" src="${context:images/logo-enyx.png}" width="125px" height="49px" />
+            <div>Inspector v${applicationVersion}</div>
+            <t:if test="productionMode">
+                <div style="color: #007fff; font-weight: bold; margin-left: 1em;">
+                    This tool was designed for firmware troubleshooting and must be used carefully.
+                    <br />
+                    I/O operations on cores registers, like "Board Dump" for example, may impact features of the running firmware.
+                    <br />
+                    Accessing the flash_mng core may additionally corrupt flash operations performed concurrently by the Enyx tools.
+                </div>
+            </t:if>
+
+            <t:if test="!productionMode">
+                <div style="color: red; font-weight: bold; margin-left: 1em;">MOCK MODE: does not use Enyx pcie driver</div>
+            </t:if>
+         </div>
+
+        <t:body />
+    </body>
+</html>

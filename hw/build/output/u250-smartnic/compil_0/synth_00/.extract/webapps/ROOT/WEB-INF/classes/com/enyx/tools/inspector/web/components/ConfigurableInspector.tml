@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+    xmlns:p="tapestry:parameter">
+    <t:zone id="${zoneClientId}" t:id="configurablesZone">
+        <t:form zone="^" clientValidation="NONE" t:id="configurablesForm">
+            <t:hidden value="core"/>
+            <t:hidden value="page"/>
+            <table class="registers configurables">
+                <thead>
+                    <tr>
+                        <th class="number">*</th>
+                        <th class="name">Name</th>
+                        <th class="value">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t:type="loop" t:id="configurablesLoop" t:source="configurables" t:value="configurable"
+                        id="${configurable.URI}">
+                        <td class="number">${configurable.registerDesc.number}.${configurable.registerDesc.offset}</td>
+                        <td class="name">${configurable.name}</td>
+                        <td class="value"><t:if test="configurable.registerDesc.enumValues">
+                                <input t:type="select" id="${configurable.name}" t:value="configurable.value"
+                                    t:model="configurable.registerDesc.enumValues" data-dojo-type="dijit.form.ComboBox" />
+                                <p:else>
+                                    <input t:type="textfield" id="${configurable.name}" t:value="configurable.value"
+                                        data-dojo-type="dijit.form.TextBox" />
+                                </p:else>
+                            </t:if></td>
+                        <div data-dojo-type="dijit.Tooltip"
+                            data-dojo-props="connectId:'${configurable.URI}',position:['above','below'],showDelay:0">${configurable.description}</div>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="alignRight">
+                <input t:type="submit" t:id="update" data-dojo-type="dijit.form.Button"
+                    data-dojo-props="label:'Update values'" />
+            </div>
+        </t:form>
+    </t:zone>
+</div>
